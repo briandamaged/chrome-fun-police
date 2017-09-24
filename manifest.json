@@ -13,5 +13,13 @@
   "permissions": [
     "activeTab",
     "storage"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["http://*.facebook.com/*", "https://*.facebook.com/*"],
+      "css": ["fun-police.css"],
+      "js": ["fun-police.js"]
+    }
   ]
 }

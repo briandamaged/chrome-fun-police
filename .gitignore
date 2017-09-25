@@ -1,0 +1,8 @@
+
+# Node stuffs
+node_modules
+npm-debug.log
+
+
+# Build stuffs
+dist

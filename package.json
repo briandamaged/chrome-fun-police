@@ -1,0 +1,22 @@
+{
+  "name": "fun-police",
+  "version": "0.1.0",
+  "description": "Arrest sites for loitering",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/briandamaged/chrome-fun-police.git"
+  },
+  "keywords": [
+    "chrome"
+  ],
+  "author": "Brian Lauber",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/briandamaged/chrome-fun-police/issues"
+  },
+  "homepage": "https://github.com/briandamaged/chrome-fun-police#readme"
+}

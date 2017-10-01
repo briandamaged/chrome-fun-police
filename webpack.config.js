@@ -34,7 +34,21 @@ const config = {
         test: /\.s?css$/,
         loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+                modules: true,
+              },
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                sourceMap: true,
+              },
+            }
+          ],
         }),
       },
     ]
@@ -46,7 +60,10 @@ const config = {
         to: '[name].[ext]',
       },
     ]),
-    new ExtractTextPlugin("styles.css"),
+    new ExtractTextPlugin({
+      filename: "[name].css",
+      ignoreOrder: true,
+    }),
   ]
 };
 

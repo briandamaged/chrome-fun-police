@@ -2,15 +2,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import styles from './fun-police.css';
+import Hello from './ui/hello';
 
 
 document.addEventListener('DOMContentLoaded', () => {
   const e = document.getElementById('app');
 
-  const hello = (
-    <div>Hello!</div>
-  );
-
-  ReactDOM.render(hello, e);
+  ReactDOM.render(<Hello />, e);
 });

@@ -20,8 +20,15 @@ const config = {
       {
         test: new RegExp('\.(' + fileExtensions.join('|') + ')$'),
         loader: "file-loader?name=[name].[ext]",
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'react'],
+        },
+      }
     ]
   },
   plugins: [

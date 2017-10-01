@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Hello from './ui/hello';
+import Hello from './ui/pages/popup';
 
 
 document.addEventListener('DOMContentLoaded', () => {

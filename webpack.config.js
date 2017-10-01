@@ -27,8 +27,10 @@ const config = {
   },
   plugins: [
     new CopyPlugin([
-      {from: 'manifest.json'},
-      {from: '*.png'},
+      {
+        from: '../static/**/*',
+        to: '[name].[ext]',
+      },
     ]),
     new HtmlWebpackPlugin({
       template: "./popup.html",

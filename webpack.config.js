@@ -1,6 +1,7 @@
 
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const fileExtensions = ['png'];
 
@@ -28,7 +29,14 @@ const config = {
         query: {
           presets: ['es2015', 'react'],
         },
-      }
+      },
+      {
+        test: /\.s?css$/,
+        loader: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        }),
+      },
     ]
   },
   plugins: [
@@ -38,6 +46,7 @@ const config = {
         to: '[name].[ext]',
       },
     ]),
+    new ExtractTextPlugin("styles.css"),
   ]
 };
 

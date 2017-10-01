@@ -10,7 +10,7 @@ const config = {
   context: path.join(__dirname, 'src'),
   entry: {
     popup: './popup.js',
-    'fun-police': './fun-police.js',
+    content: './content.js',
   },
   output: {
     path: path.join(__dirname, 'dist'),

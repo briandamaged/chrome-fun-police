@@ -22,5 +22,8 @@
   "devDependencies": {
     "html-webpack-plugin": "^2.30.1",
     "webpack": "^3.6.0"
+  },
+  "dependencies": {
+    "generate-json-webpack-plugin": "^0.2.2"
   }
 }

@@ -20,10 +20,8 @@
   },
   "homepage": "https://github.com/briandamaged/chrome-fun-police#readme",
   "devDependencies": {
+    "copy-webpack-plugin": "^4.1.0",
     "html-webpack-plugin": "^2.30.1",
     "webpack": "^3.6.0"
-  },
-  "dependencies": {
-    "generate-json-webpack-plugin": "^0.2.2"
   }
 }

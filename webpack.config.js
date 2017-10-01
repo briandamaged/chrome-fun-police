@@ -1,7 +1,7 @@
 
 const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const GenerateJSONPlugin = require('generate-json-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const fileExtensions = ['png'];
 
@@ -10,6 +10,7 @@ const config = {
   context: path.join(__dirname, 'src'),
   entry: {
     popup: './popup.js',
+    'fun-police': './fun-police.js',
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -25,7 +26,10 @@ const config = {
     ]
   },
   plugins: [
-    new GenerateJSONPlugin('manifest.json', require('./src/manifest')),
+    new CopyPlugin([
+      {from: 'manifest.json'},
+      {from: '*.png'},
+    ]),
     new HtmlWebpackPlugin({
       template: "./popup.html",
       filename: "popup.html",

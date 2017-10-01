@@ -4,7 +4,7 @@ import React from 'react';
 const PopupPage = ()=> {
   return (
     <div>
-      Yay
+      Watched
     </div>
   );
 };

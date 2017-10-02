@@ -11,6 +11,7 @@ const config = {
   entry: {
     popup: './popup.js',
     content: './content.js',
+    background: './background.js',
   },
   output: {
     path: path.join(__dirname, 'dist'),

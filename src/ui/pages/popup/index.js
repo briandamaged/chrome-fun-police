@@ -2,6 +2,7 @@
 import React from 'react';
 
 import SetupPage from './setup';
+import MonitorPage from './monitor';
 
 function arrest() {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -32,7 +33,8 @@ function handleSubmit(values) {
 
 const PopupPage = ()=> {
   return (
-    <SetupPage onSubmit={handleSubmit} />
+    <MonitorPage minutes={15} visits={3} />
+    // <SetupPage onSubmit={handleSubmit} />
   );
 };
 

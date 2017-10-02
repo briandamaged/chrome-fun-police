@@ -1,6 +1,6 @@
 
 const TabsService = {
-  query(q = {active: true}) {
+  /*async*/ query(q = {active: true}) {
     return new Promise(function(resolve, reject) {
       try {
         chrome.tabs.query(q, function(tabs) {
@@ -13,21 +13,20 @@ const TabsService = {
   },
 
 
-  getHostnames(q) {
-    return this.query(q).then(function(tabs) {
-      const hostnames = tabs.map(function(t) {
-        const url = new URL(t.url);
-        return url.hostname;
-      });
+  async getHostnames(q) {
+    const tabs = await this.query(q);
 
-      return hostnames;
-    })
+    const hostnames = tabs.map(function(t) {
+      const url = new URL(t.url);
+      return url.hostname;
+    });
+
+    return hostnames;
   },
 
-  getDistinctHostnames(q) {
-    return this.getHostnames(q).then(function(hostnames) {
-      return Array.from(new Set(hostnames));
-    });
+  async getDistinctHostnames(q) {
+    const hostnames = await this.getHostnames(q);
+    return Array.from(new Set(hostnames));
   },
 }
 

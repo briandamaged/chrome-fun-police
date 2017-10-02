@@ -20,4 +20,7 @@ const SetupPage = ({handleSubmit})=> {
 
 export default reduxForm({
   form: 'setup',
+  initialValues: {
+    minutes: 60,
+  },
 })(SetupPage);

@@ -1,6 +1,7 @@
 
 import React from 'react';
 
+import SetupPage from './setup';
 
 function arrest() {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -29,14 +30,7 @@ function foo() {
 
 const PopupPage = ()=> {
   return (
-    <div>
-      <div>
-        <button onClick={foo} >Hostname</button>
-      </div>
-      <div>
-        <button onClick={arrest} >ARREST!</button>
-      </div>
-    </div>
+    <SetupPage minutes={60} />
   );
 };
 

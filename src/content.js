@@ -7,5 +7,12 @@ function arrest() {
 
 
 chrome.runtime.onMessage.addListener(function(request) {
-  arrest();
+  switch(request.type) {
+    case "arrest":
+      arrest();
+      break;
+    case "alert":
+      alert(request.content.message);
+      break;
+  }
 });

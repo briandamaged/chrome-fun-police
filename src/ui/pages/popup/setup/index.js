@@ -1,19 +1,23 @@
 
 import React from 'react';
 
+import { Field, reduxForm } from 'redux-form';
+
 import styles from './styles.scss';
 
-const SetupPage = ({minutes})=> {
+const SetupPage = ({handleSubmit})=> {
   return (
-    <div className={ styles.setupPage } >
-      <input
-        className={ styles.minutesInput }
+    <form onSubmit={handleSubmit} className={ styles.setupPage } >
+      <Field
+        name="minutes"
+        component="input"
         type="number"
-        placeholder="Minutes"
-        value={minutes} />
+        className={ styles.minutesInput } />
       <button>Monitor</button>
-    </div>
+    </form>
   );
 }
 
-export default SetupPage;
+export default reduxForm({
+  form: 'setup',
+})(SetupPage);

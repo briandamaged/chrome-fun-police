@@ -12,25 +12,27 @@ function arrest() {
 }
 
 
-function foo() {
+function requestAlert(message) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     const tab = tabs[0];
-    const url = new URL(tab.url);
-    const hostname = url.hostname;
-
     chrome.tabs.sendMessage(tab.id, {
       type: "alert",
       content: {
-        message: hostname,
+        message: message,
       }
     });
   });
 }
 
 
+function handleSubmit(values) {
+  requestAlert(JSON.stringify(values));
+}
+
+
 const PopupPage = ()=> {
   return (
-    <SetupPage minutes={60} />
+    <SetupPage onSubmit={handleSubmit} />
   );
 };
 

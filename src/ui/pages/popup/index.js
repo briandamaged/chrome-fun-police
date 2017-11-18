@@ -33,7 +33,11 @@ function handleSubmit(values) {
 
 const PopupPage = ()=> {
   return (
-    <MonitorPage minutes={15} visits={3} />
+    <div>
+      <MonitorPage minutes={15} visits={3} />
+      <button onClick={arrest}>Arrest</button>
+    </div>
+
     // <SetupPage onSubmit={handleSubmit} />
   );
 };

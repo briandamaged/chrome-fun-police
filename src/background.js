@@ -5,10 +5,9 @@ import TabsService from './services/tabs';
 const TRACK_SITES_ALARM = 'track-sites';
 
 
-function trackSites() {
-  TabsService.getDistinctHostnames().then(function(hostnames) {
-    console.log(hostnames);
-  });
+async function trackSites() {
+  const hostnames = await TabsService.getDistinctHostnames();
+  console.log(hostnames);
 }
 
 
